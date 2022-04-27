@@ -2,6 +2,7 @@ import requests
 from openpyxl import load_workbook
 import pandas as pd
 import time
+from sqlalchemy import false
 import xlrd
 import threading
 import json
@@ -38,8 +39,8 @@ class core_1(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1", options=self.options)
 
     def run(self):
 
@@ -130,8 +131,8 @@ class core_2(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -220,8 +221,8 @@ class core_3(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -308,8 +309,8 @@ class core_4(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -397,8 +398,8 @@ class core_5(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -485,8 +486,8 @@ class core_6(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -573,8 +574,8 @@ class core_7(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -661,8 +662,8 @@ class core_8(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8.exe", options=self.options)
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8.exe", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -801,6 +802,8 @@ df_6 = pd.read_excel("./업체_6.xlsx")
 df_7 = pd.read_excel("./업체_7.xlsx")
 df_8 = pd.read_excel("./업체_8.xlsx")
 
-df_1.merge(df_2).merge(df_3).merge(df_4).merge(df_5).merge(df_6).merge(df_7).merge(df_8)
+df_total = pd.concat([df_1,df_2,df_3,df_4,df_5,df_6,df_7,df_8], ignore_index=True)
 
-df_1.to_excel("./업체_통합본.xlsx")
+df_total = df_total.sort_values("상품리뷰수", ascending=False)
+
+df_total.to_excel("./업체_통합본.xlsx")
