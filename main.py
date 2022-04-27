@@ -38,8 +38,8 @@ class core_1(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_1", options=self.options)
 
     def run(self):
 
@@ -48,12 +48,12 @@ class core_1(threading.Thread):
                 if pagingindex % 8 == 1 : 
 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -67,11 +67,13 @@ class core_1(threading.Thread):
                         'window': '',
                     }
 
+
                     response = requests.get('https://search.shopping.naver.com/api/search/category/' + str(row["카테고리번호"]), params=params)
                 
                     if response.status_code == 200 :
 
                         itemlist = response.json()
+
                         for i in itemlist['shoppingResult']['products']:
                             try : 
                                 malladdress = i["mallInfoCache"]["bizplBaseAddr"]
@@ -128,8 +130,8 @@ class core_2(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_2", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
@@ -137,12 +139,12 @@ class core_2(threading.Thread):
                 if pagingindex % 8 == 2 : 
 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -218,20 +220,20 @@ class core_3(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_3", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
             for pagingindex in range(1,100) : 
                 if pagingindex % 8 == 3 : 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -306,20 +308,20 @@ class core_4(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
             for pagingindex in range(1,100) : 
                 if pagingindex % 8 == 4 : 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -395,20 +397,20 @@ class core_5(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_5", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
             for pagingindex in range(1,100) : 
                 if pagingindex % 8 == 5 : 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -483,20 +485,20 @@ class core_6(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_6", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
             for pagingindex in range(1,100) : 
                 if pagingindex % 8 == 6 : 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -571,20 +573,20 @@ class core_7(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_7", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
             for pagingindex in range(1,100) : 
                 if pagingindex % 8 == 7 : 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -659,20 +661,20 @@ class core_8(threading.Thread):
         self.options.add_experimental_option('excludeSwitches',['enable-automation'])
         self.options.add_argument('--disable-blink-features=AutomationControlled')
 
-        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_4.exe", options=self.options)
-        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8", options=self.options)
+        self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8.exe", options=self.options)
+        # self.driver = webdriver.Chrome(executable_path = "./chromedrivers/chromedriver_8", options=self.options)
     def run(self):
 
         for name, row in category_num.iterrows() : 
             for pagingindex in range(1,100) : 
                 if pagingindex % 8 == 0 : 
                     params = {
-                        'sort': 'rel',
+                        'sort': str(sort),
                         'pagingIndex': str(pagingindex),
                         'pagingSize': '80',
                         'viewType': 'list',
                         'productSet': str(productset),
-                        'catId': '50000807',
+                        'catId': str(row["카테고리번호"]),
                         'brand': '',
                         'maker': '',
                         'spec': '',
@@ -743,7 +745,7 @@ print('4:등록일순')
 print('5:리뷰 많은순')
 print('6:리뷰 좋은순')
 sortnum = input("정렬옵션 선택해주세요.")
-category_num = pd.read_excel("./20220125.xlsx")
+category_num = pd.read_excel("./20220407.xlsx")
 if int(menunum) == 1 :
     productset = "checkout"
 elif int(menunum) == 2 :
@@ -778,3 +780,27 @@ five_core.start()
 six_core.start()
 seven_core.start()
 eight_core.start()
+
+one_core.join()
+two_core.join()
+three_core.join()
+four_core.join()
+five_core.join()
+six_core.join()
+seven_core.join()
+eight_core.join()
+
+#파일취합
+
+df_1 = pd.read_excel("./업체_1.xlsx")
+df_2 = pd.read_excel("./업체_2.xlsx")
+df_3 = pd.read_excel("./업체_3.xlsx")
+df_4 = pd.read_excel("./업체_4.xlsx")
+df_5 = pd.read_excel("./업체_5.xlsx")
+df_6 = pd.read_excel("./업체_6.xlsx")
+df_7 = pd.read_excel("./업체_7.xlsx")
+df_8 = pd.read_excel("./업체_8.xlsx")
+
+df_1.merge(df_2).merge(df_3).merge(df_4).merge(df_5).merge(df_6).merge(df_7).merge(df_8)
+
+df_1.to_excel("./업체_통합본.xlsx")
